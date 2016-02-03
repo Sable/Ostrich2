@@ -1,7 +1,7 @@
-Ostrich Benchmark Suite
-==========================
+Ostrich Benchmark Suite version 2
+=================================
 
-Ostrich is a benchmark suite developed in the [Sable Lab](http://www.sable.mcgill.ca/) at [McGill University](//www.mcgill.ca/) with the objective of studying the performance of languages used for numerical computing.
+Ostrich2 is a benchmark suite developed in the [Sable Lab](http://www.sable.mcgill.ca/) at [McGill University](//www.mcgill.ca/) with the objective of studying the performance of languages used for numerical computing. It is a port of the C and JavaScript implementations of [Ostrich](https://github.com/Sable/Ostrich) benchmarks to the [Wu Wei Benchmarking Toolkit](https://github.com/Sable/wu-wei-benchmarking-toolkit).
 
 We aim to make the suite:
  1. **Consistent** and **Correct** by providing self-checking runners for every language that automatically ensure that the computation result of the benchmarks are consistent across all language implementations and correct with regard to the algorithm for known inputs;
