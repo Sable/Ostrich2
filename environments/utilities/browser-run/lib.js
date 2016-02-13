@@ -39,7 +39,8 @@ if (parsed.help || missingArgument) {
   process.exit(1)
 }
 
-app.use(express.static(path.join(__dirname, './public')))
+app.use('/page', express.static(path.join(__dirname, './public')))
+app.use(express.static(path.dirname(parsed.argv.remain[0]).toString()))
 
 function bashToJavaScript (a) {
   if (Number.parseInt(a, 10) || Number.parseFloat(a)) {
@@ -49,13 +50,17 @@ function bashToJavaScript (a) {
   }
 }
 app.ws('/socket', function (ws, req) {
-  var code = (parsed.expression
-      ? parsed.expression
-      : fs.readFileSync(parsed.argv.remain[0]).toString()) +
-    '\n' +
-    "if (typeof run === 'function') {\n" +
+  var code
+  var runCode = "if (typeof run === 'function') {\n" +
     '  run(' + parsed.argv.remain.slice(firstArgumentIndex).map(bashToJavaScript).join(',') + ')\n' +
     '}\n'
+  if (parsed.expression) {
+    code = parsed.expression + '\n' + runCode
+  } else {
+    code = "require(['" + path.basename(parsed.argv.remain[0], '.js') + "'], function () {\n" +
+      runCode +
+      '})'
+  }
 
   var cmd = JSON.stringify({ 'type': 'eval', 'code': code })
   if (parsed.verbose) {
@@ -117,7 +122,7 @@ app.ws('/socket', function (ws, req) {
 })
 exports.start = function (startCmd) {
   app.listen(8080, function () {
-    var cmd = startCmd + ' http://localhost:8080/run.html'
+    var cmd = startCmd + ' http://localhost:8080/page/run.html'
     var status = shelljs.exec(cmd, {silent: !parsed.verbose})
     if (status.code !== 0) {
       console.log("Execution error for '" + cmd + "':")

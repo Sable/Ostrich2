@@ -2,7 +2,11 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script type="text/javascript" src="require.js" ></script>
     <script type="text/javascript">
+        requirejs.config({
+            baseUrl: '../'
+        })
         var server = {}
         function connect() {
             var browser = {
@@ -63,7 +67,7 @@
                 }
 
                 server.error = function (s) {
-                    ws.send({"type": "error", "message": s})
+                    ws.send(JSON.stringify({"type": "error", "message": s}))
                     browser.log("sent to server error: " + s)
                 }
                 
@@ -72,34 +76,38 @@
             };
 
             ws.onmessage = function (evt) {
+                function dispatch (msg) {
+                    try {
+                        browser.log("Received msg '" + msg.type + "'")
+                        if (msg.type === 'eval') {
+                            browser.log('Browser received cmd: ' + JSON.stringify(msg))
+                            try {
+                                eval(msg.code) 
+                            } catch (e) {
+                                ws.send(JSON.stringify({'type': 'error', 'message': e.toString() }))
+                            }
+                        } else if (msg.type === 'loadresult') {
+                            browser.log('Received loadresult')
+                            ___loadcb(msg.data)
+                        } else if (msg.type === 'close') {
+                            window.close()
+                        } else if (msg.type === 'done') {
+                            ws.send(JSON.stringify({'type':'done'}))
+                        } else {
+                            browser.log('Message not understood: ' + evt.data)
+                        } 
+                    } catch (e) {
+                        browser.log(e)
+                    }    
+                }
+
                 try {
                     var msg = JSON.parse(evt.data);
                 } catch (e) {
                     server.error('Invalid JSON format for message: ' + evt.data)
                 }
 
-                try {
-                    browser.log("Received msg '" + msg.type + "'")
-                    if (msg.type === 'eval') {
-                        browser.log('Browser received cmd: ' + JSON.stringify(msg))
-                        try {
-                            eval(msg.code)  
-                        } catch (e) {
-                            ws.send(JSON.stringify({'type': 'error', 'message': e.toString() }))
-                        }
-                    } else if (msg.type === 'loadresult') {
-                        browser.log('Received loadresult')
-                        ___loadcb(msg.data)
-                    } else if (msg.type === 'close') {
-                        window.close()
-                    } else if (msg.type === 'done') {
-                        ws.send(JSON.stringify({'type':'done'}))
-                    } else {
-                        browser.log('Message not understood: ' + evt.data)
-                    } 
-                } catch (e) {
-                    browser.log(e)
-                }
+                dispatch(msg)
             }
             ws.onclose = function () {
                 browser.log("Connection closed");
