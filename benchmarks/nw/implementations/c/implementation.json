@@ -1,0 +1,31 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./needle.c" },
+    "runner-arguments": [
+        {
+            "prefix":"-n ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/dimensions"
+            }
+        },
+        {
+            "prefix":"-g ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/penalty"
+            }
+        }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/c/common_rand.c"}
+    ],
+    "include-directories":[
+        {"suite-root": "/implementations/c/"}
+    ]
+}
