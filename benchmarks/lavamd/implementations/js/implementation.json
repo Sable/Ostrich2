@@ -1,0 +1,15 @@
+{
+    "type": "implementation",
+    "short-name":"js",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"js",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./lavamd.js" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/js/common_rand.js" }
+    ]
+}
