@@ -19,6 +19,18 @@ Although we tried our best to minimize external dependencies, the suite still de
  1. Node.js
  2. Python/Numpy/Scipy
 
+Status
+------------------------
+
+
+| Benchmark | Split Runner/Core Computation | Languages   | Language-Independent Verification of Results |
+| --------- | ----------------------------- | ----------- | -------------------------------------------- |
+| lud       |  yes                          | c,js,matlab | yes                                          |
+| nqueens   |  yes                          | c,js,matlab | yes                                          |
+| crc       |  no                           | c,js        | no                                           |
+| nw        |  no                           | c,js        | no                                           |
+| lavamd    |  no                           | c,js        | no                                           |
+
 
 
 Getting Started
