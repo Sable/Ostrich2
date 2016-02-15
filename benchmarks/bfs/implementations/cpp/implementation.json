@@ -1,0 +1,19 @@
+{
+    "type": "implementation",
+    "short-name":"cpp",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"cpp",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./bfs.cpp" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/cpp/common_rand.cpp"},
+        { "suite-root": "/implementations/cpp/common.cpp"}
+    ],
+    "include-directories":[
+        {"suite-root": "/implementations/cpp/"}
+    ]
+}
