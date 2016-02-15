@@ -1,0 +1,31 @@
+{
+    "type": "compiler",
+    "short-name":"g++",
+    "supported-languages":[
+        "cpp"
+    ],
+    "target-languages":[
+        "x86"
+    ],
+    "runner-name":"runner",
+    "commands": [
+        {   "executable-name": "g++",
+            "options":[
+                "-Werror",
+                "-O3",
+                {
+                    "prefix":"-I",
+                    "value": { "config": "/implementation/include-directories", "optional": true }
+                },
+                { "config": "/implementation/core-source-files" },
+                { "config": "/implementation/libraries", "optional": true },
+                "-lm",
+                { "config": "/implementation/runner-source-file" },
+                {   
+                    "prefix":"-o ",
+                    "value": {"config": "/compiler/runner-name" }
+                }
+            ]
+        }
+    ]
+}
