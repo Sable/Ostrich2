@@ -1,0 +1,17 @@
+{
+    "type": "implementation",
+    "short-name":"js",
+    "description":"JavaScript implementation",
+    "language":"js",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./backprop.js" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size"
+        }    
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/js/common_rand.js" }
+    ]
+}

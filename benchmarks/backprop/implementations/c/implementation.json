@@ -1,0 +1,22 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"c",
+    "core-source-files":[
+       { "file": "./backprop_kernel.c"}
+    ],
+    "runner-source-file": { "file": "./facetrain.c" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "file": "./imagenet.c"},
+        { "file": "./backprop.c"},
+        { "suite-root": "/implementations/c/common.c"},
+        { "suite-root": "/implementations/c/common_rand.c"}
+    ],
+    "include-directories":[
+        { "suite-root": "/implementations/c/"}
+    ]
+}
