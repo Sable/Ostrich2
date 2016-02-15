@@ -1,0 +1,25 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "core-source-files":[
+        { "file": "./fft.c" }
+    ],
+    "runner-source-file": { "file": "./main.c" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size"
+        }    
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/c/common_rand.c" },
+        { "file": "./common/common.c" },
+        { "file": "./common/complex_simple.c" }
+    ],
+    "include-directories":[
+        { "suite-root": "/implementations/c/" },
+        { "file": "./common/"}
+        
+    ]
+}
