@@ -5,4 +5,5 @@ A cyclic redundancy check is an error-detecting code commonly used in digital ne
     
 
 Note: Original version altered from the version posted online by Stephan Brumme
+
 Disclaimer from original author: http://create.stephan-brumme.com/disclaimer.html
