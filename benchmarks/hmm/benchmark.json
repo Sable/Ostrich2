@@ -1,0 +1,23 @@
+{
+    "type": "benchmark",
+    "name":"Baum-Welch Algorithm",
+    "short-name":"hmm",
+    "description":"The Baum-Welch algorithm falls into the graphical models dwarf and has many applications, including bioinformatics, cryptanalysis and speech recognition. It makes use of the forward-backward algorithm and finds the unknown parameters of a hidden Markov model (HMM).",
+    "version":"0.1.0",
+    "input-size":{
+        "small": {
+            "model": "n",
+            "nb-states": 32
+        },
+        "medium": {
+            "model": "n",
+            "nb-states": 512
+        },
+        "large": {
+            "model": "n",
+            "nb-states": 1024
+        }
+    },
+    "random-seed":1337,
+    "dwarf": "graphical models"
+}

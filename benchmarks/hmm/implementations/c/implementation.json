@@ -1,0 +1,32 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./main_bwa_hmm.c" },
+    "runner-arguments": [
+        {
+            "prefix":"-v ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/model"
+            }
+        },
+        {
+            "prefix":"-n ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/nb-states"
+            }
+        }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/c/common_rand.c"},
+        { "suite-root": "/implementations/c/common.c"}
+    ],
+    "include-directories":[
+        {"suite-root": "/implementations/c/"}
+    ]
+}
