@@ -1,0 +1,54 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./csr_spmv.c" },
+    "runner-arguments": [
+        {
+            "prefix":"-n ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/dimensions"
+            }
+        },
+        {
+            "prefix":"-s ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/standard-deviation"
+            }
+        },
+        {
+            "prefix":"-d ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/density"
+            }
+        },
+        {
+            "prefix":"-i ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/iterations"
+            }
+        }
+    ],
+    "libraries":[
+        { "file": "./common/common.c" },
+        { "file": "./common/sparse_formats.c" },
+        { "file": "./common/common_args_serial.c" },
+        { "file": "./common/ziggurat.c" },
+        { "suite-root": "/implementations/c/common_rand.c"}
+    ],
+    "include-directories":[
+        {"file": "./common/"},
+        {"suite-root": "/implementations/c/"}
+    ],
+    "compilation-flags": [
+        "-DSERIAL",
+        "-std=c99"
+    ]
+}

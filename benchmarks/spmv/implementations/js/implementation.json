@@ -1,0 +1,32 @@
+{
+    "type": "implementation",
+    "short-name":"js",
+    "description":"JavaScript implementation",
+    "language":"js",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./spmv.js" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size",
+            "path": "/dimensions"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/density"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/standard-deviation"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/iterations"
+        }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/js/common_rand.js"}
+    ],
+    "include-directories":[
+    ]
+}
