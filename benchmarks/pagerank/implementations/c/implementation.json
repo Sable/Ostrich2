@@ -1,0 +1,46 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./pagerank.c" },
+    "runner-arguments": [
+        {
+            "prefix":"-n ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/nb-pages"
+            }
+        },
+        {
+            "prefix":"-i ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/nb-iterations"
+            }
+        },
+        {
+            "prefix":"-t ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/threshold"
+            }
+        },
+        {
+            "prefix":"-q ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/divisor"
+            }
+        }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/c/common_rand.c"},
+        { "suite-root": "/implementations/c/common.c"}
+    ],
+    "include-directories":[
+        {"suite-root": "/implementations/c/"}
+    ]
+}
