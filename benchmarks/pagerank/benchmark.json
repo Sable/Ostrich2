@@ -18,7 +18,7 @@
           "divisor": 100000
       },
       "large": {
-          "nb-pages": 20000,
+          "nb-pages": 14000,
           "nb-iterations": 10,
           "threshold": 1e-08,
           "divisor": 100000
