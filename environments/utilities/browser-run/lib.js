@@ -48,14 +48,14 @@ function bashToJavaScript (a) {
     return a.toString()
   }
 
-  if (a.indexOf('@' >= 0)) {
+  if (a.indexOf('@') >= 0) {
     var tuple = a.split('@')
     var type = tuple[0].split('-')
     var inputPath = tuple[1]
 
     // Expected type
     if (type[0] !== 'array') {
-      console.log("Invalid type '" + tuple[0] + "', expected an 'array' prefix")
+      console.log("Invalid type '" + tuple[0] + "', expected an 'array' prefix from argument '" + a + "'")
       process.exit(1)
     }
 
