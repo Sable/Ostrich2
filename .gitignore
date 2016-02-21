@@ -1,10 +1,10 @@
-    .wu/setup.json
-    **/Ostrich.sublime-project
-    **/Ostrich.sublime-workspace
-    **/benchmarks/lud/input/*.csv
-    **/benchmarks/lud/output/*.csv
-    **/builds/**
-    environments/utilities/browser-run/input/args.js
-    environments/utilities/browser-run/node_modules/**
-    platforms/mba-2011/platform2.json
-    **/runs/**
+.wu/**
+*.sublime-project
+*.sublime-workspace
+benchmarks/lud/input/*.csv
+benchmarks/lud/output/*.csv
+builds/**
+environments/utilities/browser-run/input/args.js
+environments/utilities/browser-run/node_modules/**
+platforms/mba-2011/platform2.json
+runs/**
