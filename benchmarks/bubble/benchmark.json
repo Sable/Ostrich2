@@ -1,0 +1,13 @@
+{
+   "type": "benchmark",
+   "name":"Bubble Sort",
+   "short-name":"bubble",
+   "description":"Implementation of the bubble sort algorithm.",
+   "version":"0.1.0",
+   "input-size":{
+      "small":8,
+      "medium":1024,
+      "large":2048
+   },
+   "random-seed":1337
+}
