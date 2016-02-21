@@ -1,0 +1,16 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./crc_ostrich.m"},
+       { "file": "./crc32_8bytes.m"},
+       { "file": "./Lut.data"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[]
+}
