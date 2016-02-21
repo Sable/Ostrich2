@@ -13,8 +13,8 @@
         {   "executable-name": "cat",
             "options": [
                 { "config": "/implementation/runner-source-file"},
-                { "config": "/implementation/core-source-files"},
-                { "config": "/implementation/libraries"},
+                { "config": "/implementation/core-source-files", "optional": true },
+                { "config": "/implementation/libraries", "optional": true },
                 ">",
                 { "config": "/compiler/runner-name" }
             ]
