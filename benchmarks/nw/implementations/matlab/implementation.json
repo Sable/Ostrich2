@@ -1,0 +1,17 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./needle.m"},
+       { "file": "./nw.data"},
+       { "file": "./seq1.data"},
+       { "file": "./seq2.data"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[]
+}
