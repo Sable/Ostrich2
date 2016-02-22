@@ -26,7 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "nqueen_cpu.h"
-#include "misc/common.h"
+#include "common.h"
 #include <getopt.h>
 
 
