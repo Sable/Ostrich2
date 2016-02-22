@@ -4,11 +4,14 @@
 <head>
     <script type="text/javascript" src="require.js" ></script>
     <script type="text/javascript">
+        console.log('configuring requirejs')
         requirejs.config({
             baseUrl: '../'
         })
         var server = {}
+        console.log('waiting for connect to be called')
         function connect() {
+            console.log('initializing connection')
             var browser = {
                 log: console.log.bind(console)
             }

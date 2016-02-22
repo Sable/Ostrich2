@@ -126,6 +126,7 @@ function bashToJavaScript (a) {
 function indent (x) {
   return '    ' + x
 }
+
 app.ws('/socket', function (ws, req) {
   // Serialize arguments to the input args file
   var args = ['var args = []']
@@ -220,14 +221,23 @@ app.ws('/socket', function (ws, req) {
     }
   })
 })
+
 exports.start = function (startCmd) {
-  app.listen(8080, function () {
-    var cmd = startCmd + ' http://localhost:8080/page/run.html'
-    var status = shelljs.exec(cmd, {silent: !parsed.verbose})
-    if (status.code !== 0) {
-      console.log("Execution error for '" + cmd + "':")
-      console.log(status.output)
-      process.exit(1)
+  app.listen(8080, function (err) {
+    if (err) {
+        console.log(err)
+        process.exit(1)
     }
+    var cmd = startCmd + ' http://localhost:8080/page/run.html'
+    if (parsed.verbose) {
+        console.log('executing ' + cmd)
+    }
+    var status = shelljs.exec(cmd, {silent: !parsed.verbose}, function (code, stdout, stderr) {
+        if (code !== 0) {
+          console.log("Execution error for '" + cmd + "':")
+          console.log(status.output)
+          process.exit(1)
+        }
+    })
   })
 }
