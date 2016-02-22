@@ -1,0 +1,12 @@
+{
+    "type": "platform",
+    "short-name": "lynx",
+    "name": "Linux-3.16.0-29-generic-x86_64-with-Ubuntu-14.04-trusty",
+    "cpu": "Intel(R) Core(TM) i7-3820 CPU @ 3.60GHz",
+    "gpu": ["GeForce GTX 560 Ti"],
+    "memory": "7.77571 GB",
+    "os": "Ubuntu 14.04 trusty",
+    "supported-languages": ["x86_64"],
+    "supported-formats": ["binary"],
+    "environments": []
+}
