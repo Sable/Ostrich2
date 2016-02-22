@@ -42,13 +42,17 @@ create_matrix_from_file(float **mp, const char* filename, int *size_p){
   int i, j, size;
   float *m;
   FILE *fp = NULL;
+  int nb;
 
   fp = fopen(filename, "rb");
   if ( fp == NULL) {
       return RET_FAILURE;
   }
 
-  fscanf(fp, "%d\n", &size);
+  nb = fscanf(fp, "%d\n", &size);
+  if (nb == 0) {
+    return RET_FAILURE;
+  }
 
   m = (float*) malloc(sizeof(float)*size*size);
   if ( m == NULL) {
@@ -58,7 +62,10 @@ create_matrix_from_file(float **mp, const char* filename, int *size_p){
 
   for (i=0; i < size; i++) {
       for (j=0; j < size; j++) {
-          fscanf(fp, "%f ", m+i*size+j);
+          nb = fscanf(fp, "%f ", m+i*size+j);
+          if (nb == 0) {
+            return RET_FAILURE;
+          }
       }
   }
 

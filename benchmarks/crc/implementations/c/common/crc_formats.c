@@ -6,11 +6,14 @@ unsigned int* read_crc(unsigned int* num_pages,unsigned int* page_size,const cha
 	FILE* fp;
 	unsigned int i,j,read_count,num_words;
 	unsigned int* page;
+    int nb;
 
 	fp = fopen(file_path,"r");
 	check(fp != NULL,"crc_formats.read_crc() - Cannot Open File");
-	fscanf(fp,"%u\n",num_pages);
-	fscanf(fp,"%u\n\n",page_size);
+	nb = fscanf(fp,"%u\n",num_pages);
+	check(nb == 0,"crc_formats.read_crc() - Invalid data");
+	nb = fscanf(fp,"%u\n\n",page_size);
+	check(nb == 0,"crc_formats.read_crc() - Invalid data");
 	num_words = *page_size / 4;
 
 	page = int_new_array(sizeof(int)*(*num_pages)*num_words,"crc_formats.read_crc() - Heap Overflow! Cannot allocate space for page");
@@ -21,7 +24,8 @@ unsigned int* read_crc(unsigned int* num_pages,unsigned int* page_size,const cha
 		for(i=0; i<num_words; i++)
 			read_count += fscanf(fp,"%u ",&page[j*num_words+i]);
 		check(read_count == num_words,"crc_formats.read_crc() - Input file corrupted! Read count differs from page size");
-		fscanf(fp,"\n");
+		nb = fscanf(fp,"\n");
+	    check(nb == 0,"crc_formats.read_crc() - Invalid data");
 	}
 
 	fclose(fp);

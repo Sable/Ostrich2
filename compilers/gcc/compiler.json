@@ -20,8 +20,8 @@
                 { "config": "/implementation/core-source-files" },
                 { "config": "/implementation/libraries", "optional": true },
                 { "config": "/implementation/compilation-flags", "optional": true },
-                "-lm",
                 { "config": "/implementation/runner-source-file" },
+                "-lm",
                 {   
                     "prefix":"-o ",
                     "value": {"config": "/compiler/runner-name" }
