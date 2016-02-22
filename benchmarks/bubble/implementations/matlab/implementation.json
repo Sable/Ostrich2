@@ -1,0 +1,16 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./bubble.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "runner-argument-types": [
+        "'DOUBLE&1*1&REAL'"
+    ]
+}

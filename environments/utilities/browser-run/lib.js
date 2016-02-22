@@ -40,27 +40,127 @@ if (parsed.help || missingArgument) {
 }
 
 app.use('/page', express.static(path.join(__dirname, './public')))
-app.use(express.static(path.dirname(parsed.argv.remain[0]).toString()))
+app.use('/build', express.static(path.dirname(parsed.argv.remain[0]).toString()))
+app.use('/input', express.static(path.join(__dirname, './input')))
 
 function bashToJavaScript (a) {
   if (Number.parseInt(a, 10) || Number.parseFloat(a)) {
     return a.toString()
-  } else {
-    return "'" + a.toString() + "'"
   }
+
+  if (a.indexOf('@') >= 0) {
+    var tuple = a.split('@')
+    var type = tuple[0].split('-')
+    var inputPath = tuple[1]
+
+    // Expected type
+    if (type[0] !== 'array') {
+      console.log("Invalid type '" + tuple[0] + "', expected an 'array' prefix from argument '" + a + "'")
+      process.exit(1)
+    }
+
+    if (type[1] !== 'int32' &&
+      type[1] !== 'float64') {
+      console.log("Invalid array type '" + tuple[1] + "', expected an 'int32' or 'float64'")
+      process.exit(1)
+    }
+
+    var size = type.slice(2).map(Number)
+
+    // Input file
+    var ext = path.extname(inputPath)
+
+    var data = []
+    var fileData
+    if (ext === '.csv') {
+      fileData = fs.readFileSync(inputPath).toString()
+      fileData.split('\n').forEach(function (line) {
+        if (line === '') return
+        line.split(',').forEach(function (s) {
+          var n = Number.parseInt(s, 10) || Number.parseFloat(s)
+          if (!n) {
+            console.log("Invalid number '" + s + "' in file " + inputPath)
+            process.exit(1)
+          }
+          data.push(n)
+        })
+      })
+    } else if (ext === '.pgm') {
+      fileData = fs.readFileSync(inputPath).toString()
+      fileData.split('\n').slice(3).forEach(function (line) {
+        if (line === '') return
+        line.split(' ').forEach(function (s) {
+          if (s === '') return
+          var n = Number.parseInt(s, 10) || Number.parseFloat(s)
+
+          if (n === null) {
+            console.log("Invalid null value for '" + s + "'")
+          }
+          if (!n) {
+            console.log("Invalid number '" + s + "' in file " + inputPath)
+            process.exit(1)
+          }
+          data.push(n)
+        })
+      })
+    } else {
+      console.log("Unsupported extension '" + ext + "'")
+      process.exit(1)
+    }
+
+    var jsArrayType = ((type[1] === 'int32') ? 'Int32Array' : 'Float64Array')
+
+    var array = '{\n' +
+      "        type: 'array',\n" +
+      "        'array-type': " + JSON.stringify(type[1]) + ',\n' +
+      '        size: ' + JSON.stringify(size) + ',\n' +
+      "        layout: 'row-major'" + ',\n' +
+      '        data: ' + 'new ' + jsArrayType + '(' + JSON.stringify(data) + ')\n' +
+      '    }'
+
+    return array
+  }
+
+  return "'" + a.toString() + "'"
+}
+function indent (x) {
+  return '    ' + x
 }
 app.ws('/socket', function (ws, req) {
-  var code
-  var runCode = "if (typeof run === 'function') {\n" +
-    '  run(' + parsed.argv.remain.slice(firstArgumentIndex).map(bashToJavaScript).join(',') + ')\n' +
-    '}\n'
-  if (parsed.expression) {
-    code = parsed.expression + '\n' + runCode
-  } else {
-    code = "require(['" + path.basename(parsed.argv.remain[0], '.js') + "'], function () {\n" +
-      runCode +
-      '})'
+  // Serialize arguments to the input args file
+  var args = ['var args = []']
+  parsed.argv.remain.slice(firstArgumentIndex).forEach(function (x, i) {
+    args.push('args[' + i + '] = (' + bashToJavaScript(x) + ')')
+  })
+  args.push('return args')
+  fs.writeFileSync(path.join(__dirname, 'input', 'args.js'),
+    'define(function () {\n' +
+    args.map(indent).join('\n') + '\n' +
+    '})'
+  )
+
+  // Determine files to load
+  var modules = ['/input/args.js']
+  if (!parsed.expression) {
+    modules.push(path.join('/build', path.basename(parsed.argv.remain[0])))
   }
+
+  // Generate code to run. First load dependencies, then execute the code
+  var code = 'require([' + modules.map(JSON.stringify).join(',') + '], function (args) {\n' +
+    parsed.expression + ';\n' +
+    "if (typeof run === 'function' ) {\n" +
+    '  run.apply(null, args)\n' +
+    "  if (run.toString().indexOf('server.done') === -1) {\n" +
+    '      server.done()\n' +
+    '  }\n' +
+    '}\n' +
+    "if (typeof runner === 'function' ) {\n" +
+    '  runner.apply(null, args)\n' +
+    "  if (runner.toString().indexOf('server.done') === -1) {\n" +
+    '      server.done()\n' +
+    '  }\n' +
+    '}\n' +
+    '})'
 
   var cmd = JSON.stringify({ 'type': 'eval', 'code': code })
   if (parsed.verbose) {

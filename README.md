@@ -25,12 +25,18 @@ Status
 
 | Benchmark | Split Runner/Core Computation | Languages   | Language-Independent Verification of Results |
 | --------- | ----------------------------- | ----------- | -------------------------------------------- |
+| bfs       |  no                           | c,js        | no                                           |
+| backprop  |  no                           | c,js        | no                                           |
+| crc       |  no                           | c,js        | no                                           |
+| fft       |  no                           | c,js        | no                                           |
+| hmm       |  no                           | c,js        | no                                           |
+| lavamd    |  no                           | c,js        | no                                           |
 | lud       |  yes                          | c,js,matlab | yes                                          |
 | nqueens   |  yes                          | c,js,matlab | yes                                          |
-| crc       |  no                           | c,js        | no                                           |
 | nw        |  no                           | c,js        | no                                           |
-| lavamd    |  no                           | c,js        | no                                           |
-
+| pagerank  |  no                           | c,js        | no                                           |
+| srad      |  no                           | c,js        | no                                           |
+| spmv      |  no                           | c,js        | no                                           |
 
 
 Getting Started
