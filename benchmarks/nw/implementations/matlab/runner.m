@@ -1,8 +1,6 @@
 function runner(size,penalty)
 % Example: runner(4096,1);
 
-addpath('../../../../implementations/matlab/');
-
 bound_value = [0, 10000];
 input_seq_1_size = size;
 input_seq_2_size = size;

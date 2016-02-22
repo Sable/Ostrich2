@@ -1,6 +1,5 @@
 function runner(n, iter, thresh, divisor)
 % Example: runner(10,10,0.00000001,100000);
-    addpath('../../../../implementations/matlab/');
     fprintf(2, 'Running page rank\n');
     % random_pages
     if divisor < 1

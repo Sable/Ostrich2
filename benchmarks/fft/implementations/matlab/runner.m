@@ -9,8 +9,6 @@ function runner(twoExp, version, verify, debug)
 %
 % Example: runner(10)
 
-addpath('../../../../implementations/matlab/');
-
 expected_input_values = [...
 0.481573149786131970984 0.301748808388446920770 0.340183073820948256305 ...
 0.180649106785259638830 0.431881071961759344102 0.436196878628739070916 ...
@@ -76,9 +74,6 @@ else
     if version == 1
         tic;
         res = fft2DComplex(m,n);
-    else
-        tic;
-        res = fft2(m);
     end
 end
 elapsedTime = toc;

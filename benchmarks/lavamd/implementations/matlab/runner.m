@@ -1,5 +1,6 @@
 function runner(dim_boxes1d_arg)
 % Example: runner(6);
+
 if dim_boxes1d_arg < 0
     disp('ERROR: Wrong value to -boxes1d parameter, cannot be <=0');
     return;
@@ -76,11 +77,11 @@ qv_cpu = randi(value_range, 1, dim_space_elem) / 10;
 % output v,x,y,z
 fv_cpu = zeros(4, dim_space_elem); 
 
-tic
+tic();
 fv_cpu = kernel_cpu(par_cpu_alpha, dim_number_boxes,...
     box_cpu_offset, box_cpu_nn, box_cpu_nei_number, ...
     rv_cpu, qv_cpu, fv_cpu, NUMBER_PAR_PER_BOX);
-elapsedTime = toc;
+elapsedTime = toc();
 
 sum_cpu = zeros(1, 4);
 if dim_boxes1d_arg == expected_boxes1d

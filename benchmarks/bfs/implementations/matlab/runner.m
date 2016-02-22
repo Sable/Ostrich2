@@ -1,7 +1,5 @@
 function runner(no_of_nodes)
 % Example: runner(3000);
-    addpath('../../../../implementations/matlab/');
-    
     expected_no_of_nodes = 3000000;
     expected_total_cost = 26321966;
 

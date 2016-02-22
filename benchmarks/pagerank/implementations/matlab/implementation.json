@@ -5,12 +5,18 @@
     "language":"matlab",
     "core-source-files":[
        { "file": "./createRandomPageMatrices.m"},
-       { "file": "./pagerank.m"},
-       { "file": "./pagerank.data"}
+       { "file": "./pagerank.m"}
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
-        { "expand": "/experiment/input-size" }
+        { "expand": "/experiment/input-size" },
+        { "file": "./pagerank.data"}
     ],
-    "libraries":[]
+    "libraries":[
+        { "suite-root": "/implementations/matlab/createMatrixFromRandom.m" },
+        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
+        { "suite-root": "/implementations/matlab/commonRandom.m" },
+        { "suite-root": "/implementations/matlab/setRand.m" },
+        { "suite-root": "/implementations/matlab/setRandomSeed.m" }
+    ]
 }

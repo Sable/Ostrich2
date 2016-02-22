@@ -5,13 +5,19 @@
     "language":"matlab",
     "core-source-files":[
        { "file": "./needle.m"},
-       { "file": "./nw.data"},
-       { "file": "./seq1.data"},
-       { "file": "./seq2.data"}
+       { "file": "./nw.data"}
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
-        { "expand": "/experiment/input-size" }
+        { "expand": "/experiment/input-size" },
+        { "file": "./seq1.data"},
+        { "file": "./seq2.data"}
     ],
-    "libraries":[]
+    "libraries":[
+        { "suite-root": "/implementations/matlab/createMatrixFromRandom.m" },
+        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
+        { "suite-root": "/implementations/matlab/commonRandom.m" },
+        { "suite-root": "/implementations/matlab/setRand.m" },
+        { "suite-root": "/implementations/matlab/setRandomSeed.m" }
+    ]
 }
