@@ -10,6 +10,8 @@ disp('Configuration used:');
 disp('cores = 1');
 disp('boxes1d = '); disp(dim_boxes1d_arg);
 
+setRandomSeed();
+
 NUMBER_PAR_PER_BOX = 100;
 expected_boxes1d   = 6;
 
@@ -46,7 +48,7 @@ for i = 0:dim_boxes1d_arg - 1
                     for n = -1:1
                         if and(and(i+u >= 0, j+m >= 0), k+n >= 0)
                             if and(and(i+u < dim_boxes1d_arg, j+m < dim_boxes1d_arg), k+n < dim_boxes1d_arg)
-                                if and(and(u==0, m==0), n==0)
+                                if not(and(and(u==0, m==0), n==0))
                                     box_cpu_nei_x(nh, box_cpu_nn(nh)) = k + n;
                                     box_cpu_nei_y(nh, box_cpu_nn(nh)) = j + m;
                                     box_cpu_nei_z(nh, box_cpu_nn(nh)) = i + u;
@@ -70,10 +72,12 @@ for i = 0:dim_boxes1d_arg - 1
 end
 
 % input v,x,y,z
-value_range = [1 10];
-rv_cpu = randi(value_range, 4, dim_space_elem) / 10;
+% value_range = [1 10];
+% rv_cpu = randi(value_range, 4, dim_space_elem) / 10;
+rv_cpu = createMatrixRandi2(10, 4, dim_space_elem) / 10;
 % input (charge)
-qv_cpu = randi(value_range, 1, dim_space_elem) / 10;
+% qv_cpu = randi(value_range, 1, dim_space_elem) / 10;
+qv_cpu = createMatrixRandi2(10, 1, dim_space_elem) / 10;
 % output v,x,y,z
 fv_cpu = zeros(4, dim_space_elem); 
 
@@ -83,13 +87,8 @@ fv_cpu = kernel_cpu(par_cpu_alpha, dim_number_boxes,...
     rv_cpu, qv_cpu, fv_cpu, NUMBER_PAR_PER_BOX);
 elapsedTime = toc();
 
-sum_cpu = zeros(1, 4);
 if dim_boxes1d_arg == expected_boxes1d
-    for i = 1:dim_space_elem
-        for j = 1:4
-            sum_cpu(j) = sum_cpu(j) + fv_cpu(j, i);
-        end
-    end
+    sum_cpu = sum(fv_cpu,2);
     for j = 1: 4
         if round(sum_cpu(j)) ~= expectedAns(j)
             disp('Expected:'); disp(expectedAns);

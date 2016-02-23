@@ -3,7 +3,7 @@ a2 = 2 * alpha * alpha;
 
 for u = 1:dim_number_boxes
     first_i = box_offset(u);
-    for k = 1: 1 + box_nn(u)
+    for k = 1: box_nn(u)
         if k == 1
             pointer = u;
         else
@@ -28,12 +28,13 @@ for u = 1:dim_number_boxes
                  fxij = fs * d_x;
                  fyij = fs * d_y;
                  fzij = fs * d_z;
-                 
-                 fv(1, real_i) = fv(1, real_i) + qv(j) * vij;  %v
-                 fv(2, real_i) = fv(2, real_i) + qv(j) * fxij; %x
-                 fv(3, real_i) = fv(3, real_i) + qv(j) * fyij; %y
-                 fv(4, real_i) = fv(4, real_i) + qv(j) * fzij; %z
+
+                 fv(1, real_i) = fv(1, real_i) + qv(real_j) * vij;  %v
+                 fv(2, real_i) = fv(2, real_i) + qv(real_j) * fxij; %x
+                 fv(3, real_i) = fv(3, real_i) + qv(real_j) * fyij; %y
+                 fv(4, real_i) = fv(4, real_i) + qv(real_j) * fzij; %z                 
             end
+            
         end
     end
 end

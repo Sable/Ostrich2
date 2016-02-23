@@ -10,5 +10,7 @@
     "runner-arguments": [
         { "expand": "/experiment/input-size" }
     ],
-    "libraries":[]
+    "libraries":[
+        { "suite-root": "/implementations/matlab/createMatrixRandi2.m" }
+    ]
 }
