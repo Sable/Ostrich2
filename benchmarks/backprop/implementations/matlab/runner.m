@@ -19,8 +19,8 @@ RandStream.setGlobalStream(s);
 n_in     = input_n + 1;
 n_hidden = hidden_n + 1;
 n_out    = output_n + 1;
-input_weights       = rand(in, hid);
-hidden_weights      = rand(hid, out);
+input_weights       = createMatrixRandJS( in, hid); %rand
+hidden_weights      = createMatrixRandJS(hid, out); %rand
 input_prev_weights  = zeros(in, hid);
 hidden_prev_weights = zeros(hid, out);
 target              = ones(1,out); %vector
@@ -31,10 +31,10 @@ output_delta = zeros(1,out);
 
 % load(net)
 nr = in;
-%input_units = rand(1, nr); %C skips [0]
+%input_units = createMatrixRandJS(1, nr); %C skips [0]
 input_units = zeros(1, nr);
 for i=2:nr
-    input_units(i) = rand();
+    input_units(i) = commonRandomJS(); %rand
 end
 
 %hidden_weights
