@@ -41,7 +41,7 @@ image = srad_core(image,NeROI,Nc,Nr,iN,iS,jW,jE,dN,dS,dW,dE,c,lambda,niter);
 elapsedTime = toc();
 
 image = log(image) * 255;
-j     = sum(image(1:Nr));
+j     = sum(floor(image(1:Nr)));
 
 % write_graphics
 if and(niter == 500, lambda == 1)
