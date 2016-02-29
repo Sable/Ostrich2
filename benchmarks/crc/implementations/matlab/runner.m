@@ -10,10 +10,11 @@ RandStream.setGlobalStream(s);
 seed = 10000;
 
 h_num = randi(seed, num_pages, page_size); %rand_crc
+
 expected_crc = 2231263667;
 
 fileID = fopen('Lut.data', 'r');
-crc32Lookup = reshape(fscanf(fileID,'%x'),8,256);
+crc32Lookup = reshape(fscanf(fileID,'%x'),256,8)';
 fclose(fileID);
 
 tic

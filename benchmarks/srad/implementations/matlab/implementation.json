@@ -10,7 +10,7 @@
     "runner-arguments": [
         { "expand": "/experiment/input-size" },
         { "expand": "/benchmark/input-file" },
-        { "file": "../c/image.pgm" }
+        { "file": "./image.pgm" }
     ],
     "libraries":[]
 }

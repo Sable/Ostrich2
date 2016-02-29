@@ -1,6 +1,7 @@
 function [rtn] = crc32_8bytes(data, length, crc32Lookup)
 cur = 1;
 crc = 4294967295;  %hex value 0xFFFFFFFF
+
 while length >= 8
     one = bitxor(data(cur), crc);
     two = data(cur+1);
@@ -13,8 +14,6 @@ while length >= 8
     crc = bitxor(crc0, bitxor(crc1, bitxor(crc2, crc3)));
     length = length - 8;
 end
-
-%fprintf('cur = %d, length = %d\n', cur, length);
 
 for i = cur:length
     crc = bitxor(shift(crc, -8), crc32Lookup(1, bitxor(bitand(crc,bit), data(i))));
