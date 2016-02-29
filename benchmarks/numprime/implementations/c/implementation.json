@@ -1,0 +1,20 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "core-source-files":[
+        { "file": "./numprime.c" }
+    ],
+    "runner-source-file": { "file": "./runner.c" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+    ],
+    "include-directories":[
+    ],
+    "compilation-flags": [
+        "-std=c99"
+    ]
+}
