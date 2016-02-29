@@ -1,0 +1,16 @@
+{
+    "type": "implementation",
+    "short-name":"matmul",
+    "description":"Matlab Implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./matmul.m"}
+    ],
+    "runner-source-file": { "file": "./main.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "runner-argument-types": [
+        "'DOUBLE&1*1&REAL'"
+    ]
+}
