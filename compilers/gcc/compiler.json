@@ -11,7 +11,7 @@
     "commands": [
         {   "executable-name": "gcc",
             "options":[
-                "-Werror",
+		"-Werror",
                 "-O3",
                 {
                     "prefix":"-I",
