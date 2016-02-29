@@ -1,0 +1,13 @@
+{
+   "type": "benchmark",
+   "name":"Count primes",
+   "short-name":"numprime",
+   "description":"Count the number of primes up to a given upper bound.",
+   "version":"0.1.0",
+   "input-size":{
+      "small":100,
+      "medium":10000,
+      "large":100000
+   },
+   "random-seed":1337
+}

@@ -1,0 +1,13 @@
+{
+   "type": "benchmark",
+   "name":"Merge Sort",
+   "short-name":"merge",
+   "description":"Implementation of the merge sort algorithm.",
+   "version":"0.1.0",
+   "input-size":{
+      "small":100,
+      "medium":10000,
+      "large":100000
+   },
+   "random-seed":1337
+}
