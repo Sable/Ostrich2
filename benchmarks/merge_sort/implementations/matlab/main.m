@@ -10,9 +10,11 @@ function main(size)
             break;
         end
     end
-    disp('OUT');
-    disp(ok);
-    disp('TIME');
-    disp(t);
+    disp('{')
+    disp('"options":')
+    disp(size)
+    disp(', "time":')
+    disp(t)
+    disp('}')
 end
 
