@@ -14,10 +14,10 @@
         }
     ],
     "libraries": [
-        { "file": "./misc/common.c" }
+        { "suite-root": "/implementations/c/common.c" }
     ],
     "include-directories":[
         { "file": "./" },
-        { "file": "./misc/" }
+        { "suite-root": "/implementations/c/" }
     ]
 }

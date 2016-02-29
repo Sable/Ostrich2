@@ -1,4 +1,14 @@
 #!/usr/bin/env node
 var path = require('path')
+var os = require('os')
 var lib = require(path.join(__dirname, '../utilities/browser-run/lib.js'))
-lib.start('open -g -a Google\\ Chrome ')
+
+var platform = os.platform()
+if (platform === 'darwin') {
+  lib.start('open -g -a Google\\ Chrome ')
+} else if (platform === 'linux') {
+  lib.start('google-chrome ')
+} else {
+  console.log('Unsupported platform ' + platform)
+  process.exit(1)
+}

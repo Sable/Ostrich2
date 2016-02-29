@@ -103,6 +103,7 @@ void read_graphics(	char* filename,
 	int i, j;
 	char c;
 	int temp;
+    int nb;
 
 	//================================================================================80
 	//	OPEN FILE FOR READING
@@ -133,7 +134,11 @@ void read_graphics(	char* filename,
 	if(major==0){																// if matrix is saved row major in memory (C)
 		for(i=0; i<data_rows; i++){
 			for(j=0; j<data_cols; j++){
-				fscanf(fid, "%d", &temp);
+				nb = fscanf(fid, "%d", &temp);
+                if (nb == 0) {
+                    printf( "Could not find a value to read\n" );
+                    return;
+                }
 				input[i*data_cols+j] = (fp)temp;
 			}
 		}
@@ -141,7 +146,11 @@ void read_graphics(	char* filename,
 	else{																				// if matrix is saved column major in memory (MATLAB)
 		for(i=0; i<data_rows; i++){
 			for(j=0; j<data_cols; j++){
-				fscanf(fid, "%d", &temp);
+				nb = fscanf(fid, "%d", &temp);
+                if (nb == 0) {
+                    printf( "Could not find a value to read\n" );
+                    return;
+                }
 				input[j*data_rows+i] = (fp)temp;
 			}
 		}

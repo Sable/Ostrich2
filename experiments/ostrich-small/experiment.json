@@ -1,0 +1,9 @@
+{
+	"type": "experiment",
+    "short-name": "ostrich-small",
+	"iteration-number": 3,
+	"input-size":"small",
+	"configuration": {
+	    "compilers": ["gcc","g++","none-js","none-matlab"]
+	}
+}

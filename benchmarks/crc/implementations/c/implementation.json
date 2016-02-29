@@ -31,9 +31,9 @@
     ],
     "libraries":[
         { "suite-root": "/implementations/c/common_rand.c" },
-        { "file": "./common/common.c" },
-        { "file": "./common/crc_formats.c" },
-        { "file": "./common/common_args_serial.c" }
+        { "suite-root": "/implementations/c/common.c" },
+        { "file": "./common/common_args_serial.c" },
+        { "file": "./common/crc_formats.c" }
     ],
     "include-directories":[
         { "suite-root": "/implementations/c/" },

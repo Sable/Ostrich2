@@ -1,0 +1,10 @@
+{
+	"type": "experiment",
+    "short-name": "matjuice-bmks",
+	"iteration-number": 1,
+	"input-size":"medium",
+	"configuration": {
+        "benchmarks": ["bubble"],
+	    "compilers": ["matjuice"]
+	}
+}
