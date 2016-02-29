@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"Babai CVP Benchmark",
+   "short-name":"babai",
+   "description":"Nearest Plane Algorithm for the Closest Vector Problem",
+   "version":"0.1.0",
+   "input-size":{
+      "small":10,
+      "medium":1000,
+      "large": 10000
+   }  
+}
