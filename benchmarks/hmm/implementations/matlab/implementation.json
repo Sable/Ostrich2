@@ -1,0 +1,22 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./calc_alpha.m"},
+       { "file": "./calc_beta.m"},
+       { "file": "./calc_gamma_sum.m"},
+       { "file": "./calc_xi_sum.m"},
+       { "file": "./estimate_a.m"},
+       { "file": "./estimate_b.m"},
+       { "file": "./estimate_pi.m"},
+       { "file": "./mat_vec_mul.m"},
+       { "file": "./run_hmm_bwa.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[]
+}
