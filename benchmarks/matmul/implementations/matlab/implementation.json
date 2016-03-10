@@ -1,6 +1,6 @@
 {
     "type": "implementation",
-    "short-name":"matmul",
+    "short-name":"matlab",
     "description":"Matlab Implementation",
     "language":"matlab",
     "core-source-files":[
