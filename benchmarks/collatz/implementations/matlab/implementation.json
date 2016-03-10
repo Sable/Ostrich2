@@ -4,11 +4,9 @@
     "description":"Matlab implementation",
     "language":"matlab",
     "core-source-files":[
-       { "file": "./split.m"},
-       { "file": "./merge.m"},
-       { "file": "./merge_sort.m"}
+       { "file": "./collatz.m"}
     ],
-    "runner-source-file": { "file": "./main.m" },
+    "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
         { "expand": "/experiment/input-size" }
     ],

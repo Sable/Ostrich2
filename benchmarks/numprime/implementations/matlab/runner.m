@@ -1,4 +1,4 @@
-function drv_prime(scale)
+function runner(scale)
     tic();
     n = numprime(scale);
     t = toc();

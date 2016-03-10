@@ -1,4 +1,4 @@
-function main(size)
+function runner(size)
     m=size;
     k=size/2;
     n=size;
@@ -10,8 +10,10 @@ function main(size)
     matmul(A, B, m, k, n);
     t = toc();
 
-    disp('OUT');
-    disp(1);
-    disp('TIME');
+    disp('{');
+    disp('"options":');
+    disp(size);
+    disp(', "time": ');
     disp(t);
+    disp('}');
 end

@@ -1,10 +1,12 @@
 {
     "type": "implementation",
     "short-name":"matlab",
-    "description":"Matlab port of C implementation",
+    "description":"Matlab implementation",
     "language":"matlab",
     "core-source-files":[
-       { "file": "./diffraction.m"}
+       { "file": "./split.m"},
+       { "file": "./merge.m"},
+       { "file": "./merge_sort.m"}
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
