@@ -18,6 +18,12 @@ elapsedTime = toc;
 disp('The elapsed time (s):');
 disp(elapsedTime);
 
-%fprintf(1, '{ "status": 0, "options": "runner(%s)", "time": %f }\n', num2str(size), elapsedTime);
+disp('{');
+disp('"options":');
+disp(scale);
+disp(', "time": ');
+disp(elapsedTime);
+disp('}');
+
 
 end
