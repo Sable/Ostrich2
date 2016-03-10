@@ -1,0 +1,13 @@
+{
+  "type": "implementation", 
+  "short-name": "maltab", 
+  "description": "Matlab implementation for babai", 
+  "language": "matlab", 
+  "core-source-files":[
+    { "file": "./babai.m" }
+  ],
+  "runner-source-file": { "file": "./runner.m" }, 
+  "runner-arguments":[
+    {"expand": "/experiment/input-size" }
+  ]
+}
