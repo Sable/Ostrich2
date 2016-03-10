@@ -1,6 +1,6 @@
 {
   "type": "implementation", 
-  "short-name": "maltab", 
+  "short-name": "matlab", 
   "description": "Matlab implementation for babai", 
   "language": "matlab", 
   "core-source-files":[
