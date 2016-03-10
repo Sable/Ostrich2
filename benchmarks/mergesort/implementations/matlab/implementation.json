@@ -8,7 +8,7 @@
        { "file": "./merge.m"},
        { "file": "./merge_sort.m"}
     ],
-    "runner-source-file": { "file": "./main.m" },
+    "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
         { "expand": "/experiment/input-size" }
     ],

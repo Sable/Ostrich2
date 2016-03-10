@@ -1,4 +1,4 @@
-function main(size)
+function runner(size)
     A = randn(1, size);
     tic();
     B = merge_sort(A, size);

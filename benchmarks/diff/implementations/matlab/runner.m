@@ -1,4 +1,4 @@
-function drv_diff(scale)
+function runner(scale)
 %%
 %% Driver for the diffraction pattern calculator.
 %%

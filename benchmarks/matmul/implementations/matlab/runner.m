@@ -1,4 +1,4 @@
-function main(size)
+function runner(size)
     m=size;
     k=size/2;
     n=size;
