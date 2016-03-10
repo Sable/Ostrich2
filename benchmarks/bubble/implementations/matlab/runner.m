@@ -1,4 +1,4 @@
-function [x] = runner(size)
+function runner(size)
 
 A=(randn(1,size));
 A=100*A;
