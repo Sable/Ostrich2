@@ -32,7 +32,7 @@ def bash_to_matlab(a):
 
 arguments = map(bash_to_matlab, args.arguments)
 
-matlab_runner_script = """addpath('%s'); try %s(%s); exit(0); catch, ME = lasterror; fprintf(2, '%%s\\n', ME.message); exit(1); end"""
+matlab_runner_script = """cd('%s'); addpath('%s'); try %s(%s); exit(0); catch, ME = lasterror; fprintf(2, '%%s\\n', ME.message); exit(1); end"""
 
 try:
 	subprocess.check_call(
@@ -40,7 +40,7 @@ try:
 			'-nodesktop', 
 			'-nodisplay', 
 			'-r', 
-			matlab_runner_script%(dir_name, function_name,','.join(arguments))
+			matlab_runner_script%(dir_name, dir_name, function_name,','.join(arguments))
 		], stdout=sys.stdout, stderr=sys.stderr)
 	sys.exit(0)
 except subprocess.CalledProcessError as e:
