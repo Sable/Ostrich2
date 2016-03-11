@@ -61,6 +61,10 @@ else
     warning('WARNING: no self-checking for input size of %d\n', layer_size);
 end
 
-msg = sprintf('{ "status": %d, "options": "%d", "time": %f seconds}\n', 1, layer_size, elapsedTime);
-disp(msg);
+disp('{');
+disp('"options":');
+disp(layer_size);
+disp(', "time": ');
+disp(elapsedTime);
+disp('}');
 end
