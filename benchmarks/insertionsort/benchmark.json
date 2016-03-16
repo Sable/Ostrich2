@@ -1,7 +1,7 @@
 {
    "type": "benchmark",
    "name":"Insertion Sort",
-   "short-name":"insert",
+   "short-name":"insertionsort",
    "description":"Implementation of the insertion sort algorithm.",
    "version":"0.1.0",
    "input-size":{
