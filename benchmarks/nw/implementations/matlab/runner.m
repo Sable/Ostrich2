@@ -1,4 +1,4 @@
-function runner(size,penalty)
+function runner(size,penalty,seq1_file,seq2_file,nw_file)
 % Example: runner(4096,1);
 
 % s = RandStream('mcg16807','Seed',49734321);
@@ -35,14 +35,14 @@ for i = 2:max_cols
     input_seq_2(i) = 1 + mod(abs(commonRandom()), nb_possible_seq_items);
 end
 
-fp_seq1 = fopen('seq1.data', 'r');
+fp_seq1 = fopen(seq1_file, 'r');
 expected_aligned_seq_1_chars = fscanf(fp_seq1, '%c');
 expected_aligned_seq_1 = expected_aligned_seq_1_chars - 'A';
 expected_aligned_seq_1(expected_aligned_seq_1<0 | expected_aligned_seq_1>=26) = -1;
 fclose(fp_seq1);
 expected_aligned_seq_1_size = length(expected_aligned_seq_1);
 
-fp_seq2 = fopen('seq2.data', 'r');
+fp_seq2 = fopen(seq2_file, 'r');
 expected_aligned_seq_2_chars = fscanf(fp_seq2, '%c');
 expected_aligned_seq_2 = expected_aligned_seq_2_chars - 'A';
 expected_aligned_seq_2(expected_aligned_seq_2<0 | expected_aligned_seq_2>=26) = -1;
@@ -53,7 +53,7 @@ if print_results
     disp('Computing dynamic programming results');
 end
 
-fileID = fopen('nw.data', 'r');
+fileID = fopen(nw_file, 'r');
 blosum62 = reshape(fscanf(fileID,'%d'),24,24);
 fclose(fileID);
 
