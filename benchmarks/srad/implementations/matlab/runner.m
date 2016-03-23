@@ -1,10 +1,10 @@
-function runner(niter,lambda)
+function runner(niter,lambda,image_file)
 % Example: runner(500,1);
 expected_output = 52608;
 
 Nr = 502;
 Nc = 458;
-fileID = fopen('../c/image.pgm','r');
+fileID = fopen(image_file,'r');
 for i = 1:3
     fgets(fileID); % skip header
 end
