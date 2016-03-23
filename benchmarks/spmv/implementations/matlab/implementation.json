@@ -10,7 +10,22 @@
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
-        { "expand": "/experiment/input-size" }
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/dimensions"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/density"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/standard-deviation"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/iterations"
+        }
     ],
     "libraries":[]
 }
