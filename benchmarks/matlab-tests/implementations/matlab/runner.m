@@ -1,7 +1,12 @@
 function runner
     tic();
     dispTests();
+    modTests();
+    mrdivideTests();
+    minusTests();
     mtimesTests();
+    plusTests();
+    relopTests();
     elapsedTime = toc();
 
     disp('{');

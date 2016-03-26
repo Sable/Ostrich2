@@ -5,6 +5,6 @@ function assertEqual(x,y)
         disp(x);
         disp('is not equal to argument 2:');
         disp(y);
-        exit(1);
+        error('failed');
     end
 end

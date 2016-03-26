@@ -6,7 +6,12 @@
     "core-source-files":[
        { "file": "./assertEqual.m"},
        { "file": "./dispTests.m"},
-       { "file": "./mtimesTests.m"}
+       { "file": "./modTests.m"},
+       { "file": "./mrdivideTests.m"},
+       { "file": "./minusTests.m"},
+       { "file": "./mtimesTests.m"},
+       { "file": "./plusTests.m"},
+       { "file": "./relopTests.m"}
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": []
