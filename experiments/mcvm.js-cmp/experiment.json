@@ -1,11 +1,11 @@
 {
 	"type": "experiment",
-    "short-name": "mcvm-js-cmp",
+    "short-name": "mcvm.js-cmp",
 	"iteration-number": 5,
 	"input-size":"medium",
 	"configuration": {
         "benchmarks": ["bubble", "collatz",  "insertionsort", "numprime"],
-	    "compilers": ["matjuice", "mcvm-js", "none-matlab"],
-        "environments": ["chrome", "firefox", "safari", "matlab-vm"]
+	    "compilers": ["matjuice", "mcvm.js", "none-matlab"],
+        "environments": ["chrome", "firefox", "safari", "matlab-vm", "node"]
 	}
 }
