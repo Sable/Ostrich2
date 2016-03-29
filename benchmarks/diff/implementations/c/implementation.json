@@ -1,0 +1,15 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"Matlab port of C implementation",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./diffraction.c" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "runner-argument-types": [
+        "'DOUBLE&1*1&REAL'"
+    ]
+}
