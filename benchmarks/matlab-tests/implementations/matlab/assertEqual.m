@@ -1,5 +1,5 @@
 function assertEqual(x,y)
-    if (x ~= y) 
+    if (any(x ~= y)) 
         disp('assertEqual failed');
         disp('argument 1:');
         disp(x);
