@@ -4,7 +4,7 @@
 	"iteration-number": 1,
 	"input-size":"medium",
 	"configuration": {
-        "benchmarks": ["bubble"],
+        "benchmarks": ["bubble", "collatz",  "insertionsort", "matmul", "mergesort", "numprime"],
 	    "compilers": ["matjuice"]
 	}
 }

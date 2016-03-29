@@ -1,0 +1,10 @@
+{
+   "type": "benchmark",
+   "name":"Unit tests for MATLAB compilers and environments",
+   "short-name":"matlab-tests",
+   "version":"0.1.0",
+   "input-size":{
+      "small":1,
+      "medium":1
+   }
+}

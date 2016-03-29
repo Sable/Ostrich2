@@ -1,0 +1,13 @@
+{
+   "type": "benchmark",
+   "name":"Diffraction",
+   "short-name":"diff",
+   "description": "",
+   "version":"0.0.1",
+   "input-size":{
+      "small":5,
+      "medium":10,
+      "large":20
+   },
+   "random-seed":1337
+}

@@ -1,0 +1,12 @@
+{
+	"type": "platform",
+	"short-name": "mbp-hanfeng",
+	"name": "Darwin-15.3.0-x86_64-i386-64bit",
+	"cpu": "Intel Core i5",
+	"gpu": "Intel Iris Graphics 6100",
+	"memory": "8 GB",
+	"os": "Mac OS X 10.11.3",
+	"supported-languages": ["x86_64"],
+	"supported-formats": ["binary"],
+	"environments": []
+}

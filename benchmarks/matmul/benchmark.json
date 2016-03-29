@@ -1,0 +1,13 @@
+{
+   "type": "benchmark",
+   "name":"Matrix multiplication",
+   "short-name":"matmul",
+   "description":"Implementation of the matrix multiplication algorithm.",
+   "version":"0.1.0",
+   "input-size":{
+      "small":100,
+      "medium":1000,
+      "large":10000
+   },
+   "random-seed":1337
+}
