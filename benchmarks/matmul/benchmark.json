@@ -6,8 +6,8 @@
    "version":"0.1.0",
    "input-size":{
       "small":100,
-      "medium":10000,
-      "large":100000
+      "medium":256,
+      "large":512
    },
    "random-seed":1337
 }

@@ -149,19 +149,23 @@ app.ws('/socket', function (ws, req) {
   // Generate code to run. First load dependencies, then execute the code
   var code = 'require([' + modules.map(JSON.stringify).join(',') + '], function (args) {\n' +
     parsed.expression + ';\n' +
-    "if (typeof run === 'function' ) {\n" +
-    '  run.apply(null, args)\n' +
-    "  if (run.toString().indexOf('server.done') === -1) {\n" +
-    '      server.done()\n' +
+    "try {\n" + 
+    "  if (typeof run === 'function' ) {\n" +
+    '    run.apply(null, args)\n' +
+    "    if (run.toString().indexOf('server.done') === -1) {\n" +
+    '        server.done()\n' +
+    '    }\n' +
     '  }\n' +
-    '}\n' +
-    "if (typeof runner === 'function' ) {\n" +
-    '  runner.apply(null, args)\n' +
-    "  if (runner.toString().indexOf('server.done') === -1) {\n" +
-    '      server.done()\n' +
+    "  if (typeof runner === 'function' ) {\n" +
+    '    runner.apply(null, args)\n' +
+    "    if (runner.toString().indexOf('server.done') === -1) {\n" +
+    '        server.done()\n' +
+    '    }\n' +
     '  }\n' +
-    '}\n' +
-    '})'
+    '} catch (e) {\n' +
+    '  server.log(e)\n' +
+    '  server.error(e.stack)\n' +
+    '}})'
 
   var cmd = JSON.stringify({ 'type': 'eval', 'code': code })
   if (parsed.verbose) {

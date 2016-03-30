@@ -1,12 +1,12 @@
 {
     "type": "implementation",
-    "short-name":"matmul",
+    "short-name":"matlab",
     "description":"Matlab Implementation",
     "language":"matlab",
     "core-source-files":[
        { "file": "./matmul.m"}
     ],
-    "runner-source-file": { "file": "./main.m" },
+    "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
         { "expand": "/experiment/input-size" }
     ],

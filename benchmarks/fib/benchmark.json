@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"N-th Fibonacci Sequence Number Recursive Computation",
+   "short-name":"fib",
+   "description":"Computes the N-th number of the Fibonacci sequence using the recursive algorithm.",
+   "version":"0.1.0",
+   "input-size":{
+      "small":10,
+      "medium":40,
+      "large":45
+   }
+}

@@ -10,7 +10,7 @@
     ],
     "runner-name":"runner.m",
     "commands": [
-        {   "executable-name": "cat",
+        {   "executable-path": { "suite-root": "/utilities/cat-with-nl"},
             "options": [
                 { "config": "/implementation/runner-source-file"},
                 { "config": "/implementation/core-source-files", "optional": true },

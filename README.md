@@ -1,6 +1,8 @@
 Ostrich Benchmark Suite version 2
 =================================
 
+[![Join the chat at https://gitter.im/Sable/Ostrich2](https://badges.gitter.im/Sable/Ostrich2.svg)](https://gitter.im/Sable/Ostrich2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Ostrich2 is a benchmark suite developed in the [Sable Lab](http://www.sable.mcgill.ca/) at [McGill University](//www.mcgill.ca/) with the objective of studying the performance of languages used for numerical computing. It is a port of the C and JavaScript implementations of the [Ostrich](https://github.com/Sable/Ostrich) benchmarks to the [Wu Wei Benchmarking Toolkit](https://github.com/Sable/wu-wei-benchmarking-toolkit) with support for more languages such as MATLAB on the way.
 
 We aim to make the suite:

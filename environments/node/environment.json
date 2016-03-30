@@ -1,0 +1,10 @@
+{
+	"type": "environment",
+	"short-name": "node",
+	"name": "Node.js",
+	"version": "v5.7.0",
+	"supported-languages": ["js"],
+	"supported-formats": ["text"],
+	"implementation-language": "x86",
+	"implementation-format": "binary"
+}

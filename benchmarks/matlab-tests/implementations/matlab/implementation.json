@@ -1,0 +1,19 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./assertEqual.m" },
+       { "file": "./arrayTests.m" },
+       { "file": "./dispTests.m" },
+       { "file": "./modTests.m" },
+       { "file": "./mrdivideTests.m" },
+       { "file": "./minusTests.m" },
+       { "file": "./mtimesTests.m" },
+       { "file": "./plusTests.m" },
+       { "file": "./relopTests.m" }
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": []
+}
