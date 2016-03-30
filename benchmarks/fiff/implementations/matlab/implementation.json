@@ -1,10 +1,10 @@
 {
   "type": "implementation",
   "short-name": "matlab",
-  "description": "Matlab implementation for babai",
+  "description": "Matlab implementation for fiff",
   "language": "matlab",
   "core-source-files":[
-    { "file": "./babai.m" }
+    { "file": "./finediff.m" }
   ],
   "runner-source-file": { "file": "./runner.m" },
   "runner-arguments":[

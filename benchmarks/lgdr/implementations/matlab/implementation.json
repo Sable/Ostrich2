@@ -1,10 +1,12 @@
 {
   "type": "implementation",
   "short-name": "matlab",
-  "description": "Matlab implementation for babai",
+  "description": "Matlab implementation for lgdr",
   "language": "matlab",
   "core-source-files":[
-    { "file": "./babai.m" }
+    { "file": "./PN_Legendre_vectN.m" },
+    { "file": "./PNx_Legendre_vectN.m" },
+    { "file": "./PNxx_Legendre_vectN.m" }
   ],
   "runner-source-file": { "file": "./runner.m" },
   "runner-arguments":[
