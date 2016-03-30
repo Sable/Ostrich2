@@ -20,6 +20,5 @@
     "include-directories":[
         { "suite-root": "/implementations/c/" },
         { "file": "./common/"}
-        
     ]
 }
