@@ -5,9 +5,18 @@
    "description":"Implementation of the bubble sort algorithm.",
    "version":"0.1.0",
    "input-size":{
-      "small":100,
-      "medium":10000,
-      "large":100000
+      "small": { 
+          "size": 100,
+          "divisor": 100
+      },
+      "medium": { 
+          "size": 10000,
+          "divisor": 100
+      },
+      "large": { 
+          "size": 100000,
+          "divisor": 100
+      }
    },
    "random-seed":1337
 }

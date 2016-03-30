@@ -7,8 +7,10 @@
 int main(int argc, char *argv[])
 {
   int size;
-  if(argc == 2){    
+  int divisor;
+  if(argc == 3){    
     size = atoi(argv[1]); 
+    divisor = atoi(argv[2]);
   }
   else{
     printf("Please provide appropriate arguments\n");
@@ -18,20 +20,15 @@ int main(int argc, char *argv[])
   int *A = (int*)malloc(size*sizeof(int));
   int i;
   for(i=0; i <size; i++){
-    A[i] = abs(common_rand()%50);
+    A[i] = abs(common_rand()%divisor);
   } 
   stopwatch sw;   
   stopwatch_start(&sw);
   bubble(A,size);
   stopwatch_stop(&sw);
-  int elapsed_time = get_interval_by_sec(&sw);
+  double elapsed_time = get_interval_by_sec(&sw);
 
-  printf("{");
-  printf("\"options\":");
-  printf("%d",size);
-  printf(", \"time\":");
-  printf("%f",elapsed_time);
-  printf("}");
+  printf("{\"options\":%d, \"time\":%f}\n",size, elapsed_time);
 
   free(A);
   return 0;

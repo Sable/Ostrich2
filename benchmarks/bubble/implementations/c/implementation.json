@@ -15,9 +15,15 @@
     ],
     "runner-source-file": { "file": "./runner.c" },
     "runner-arguments": [
-        { "expand": "/experiment/input-size" }
+        { "expand": "/experiment/input-size",
+          "path": "/size"
+        },
+        { "expand": "/experiment/input-size",
+          "path": "/divisor"
+        }
     ],
     "runner-argument-types": [
+        "'DOUBLE&1*1&REAL'",
         "'DOUBLE&1*1&REAL'"
     ]
 }
