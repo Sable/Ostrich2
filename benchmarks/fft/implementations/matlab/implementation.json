@@ -13,6 +13,9 @@
     "runner-arguments": [
         { "expand": "/experiment/input-size" }
     ],
+    "runner-argument-types": [
+      "'DOUBLE&1*1&REAL'"
+    ],
     "libraries":[
         { "suite-root": "/implementations/matlab/createMatrixFromRandom.m" },
         { "suite-root": "/implementations/matlab/commonRandomJS.m" },
