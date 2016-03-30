@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"Legendre polynomials",
+   "short-name":"lgdr",
+   "description":"Compute the normalized, orthogonormal Legendre polynomials",
+   "version":"0.1.0",
+   "input-size":{
+      "small":10,
+      "medium":100,
+      "large": 1000
+   }  
+}
