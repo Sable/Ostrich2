@@ -33,20 +33,8 @@ end
 
 if version == 0
     filename = strcat('data-', num2str(twoExp), '.mat');
-    if exist(fullfile(cd, filename))
-        load(filename, 'mR', 'mI');
-
-        for i=1:10
-            if mR(i) ~= expected_input_values(i)
-                error('Invalid cached data\n');
-                exit(1);
-            end
-        end
-    else 
-        mR = createMatrixFromRandom(n);
-        mI = createMatrixFromRandom(n);
-        save(filename, 'mR', 'mI');
-    end
+    mR = createMatrixFromRandom(n);
+    mI = createMatrixFromRandom(n);
 
     if debug
         fprintf('Input: \n');
@@ -57,20 +45,7 @@ if version == 0
     [resR,resI] = fft2D(mR,mI,n);
 else
     filename = strcat('data-', num2str(twoExp), '-complex.mat');
-    if exist(fullfile(cd, filename))
-        load(filename, 'm');
-
-        mR = real(m);
-        for i=1:10
-            if mR(i) ~= expected_input_values(i)
-                error('Invalid cached data\n');
-                exit(1);
-            end
-        end
-    else 
-        m = complex(createMatrixFromRandom(n),createMatrixFromRandom(n));
-        save(filename, 'm');
-    end
+    m = complex(createMatrixFromRandom(n),createMatrixFromRandom(n));
     if version == 1
         tic;
         res = fft2DComplex(m,n);
