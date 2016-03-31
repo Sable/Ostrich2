@@ -40,7 +40,7 @@ function run (n){
         status: 1,
         options: "run(" + n + ")",
         time: (t2 - t1) / 1000,
-        output: String(x) + "," + String(y) 
+        output: String(y) 
     }));
     server.done();
 }

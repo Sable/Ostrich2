@@ -21,5 +21,5 @@ int main(int argc, char* argv[]) {
     }
     stopwatch_stop(&sw);
     y = common_randJS();
-    printf("{ \"time\": %f, \"output\": \"%f,%f\" }\n", get_interval_by_sec(&sw), x, y);
+    printf("{ \"time\": %f, \"output\": %f }\n", get_interval_by_sec(&sw), y);
 }

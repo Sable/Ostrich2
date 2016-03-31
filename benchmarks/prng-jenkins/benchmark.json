@@ -6,7 +6,7 @@
    "version":"0.1.0",
    "input-size":{
       "small":1000,
-      "medium":1000000,
-      "large":100000000
+      "medium":60000,
+      "large":100000
    }
 }

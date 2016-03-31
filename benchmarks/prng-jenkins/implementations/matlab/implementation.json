@@ -1,0 +1,20 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab implementation",
+    "language":"matlab",
+    "core-source-files":[],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "runner-argument-types": [
+        "'DOUBLE&1*1&REAL'"
+    ],
+    "libraries": [
+        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
+        { "suite-root": "/implementations/matlab/commonRandom.m" },
+        { "suite-root": "/implementations/matlab/setRand.m" },
+        { "suite-root": "/implementations/matlab/setRandomSeed.m" }
+    ]
+}
