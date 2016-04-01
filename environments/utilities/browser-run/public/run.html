@@ -65,8 +65,8 @@
             ws.onopen = function () {
                 browser.log("Connection opened");
                 server.log = function (s) {
-                    ws.send(JSON.stringify({'type': 'output', 'output': s}))
                     browser.log("sent to server: " + s)
+                    ws.send(JSON.stringify({'type': 'output', 'output': s}))
                 }
 
                 server.error = function (s) {
