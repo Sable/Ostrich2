@@ -1,0 +1,17 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation from http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/CODES/mt19937ar.c",
+    "language":"c",
+    "core-source-files":[],
+    "runner-source-file": { "file": "./mt19937ar.c" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/c/common.c" }
+    ],
+    "include-directories": [
+        { "suite-root": "/implementations/c/" }
+    ]
+}

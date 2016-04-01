@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"Mersenne-Twister Pseudo-random number generator",
+   "short-name":"prng-twister",
+   "description":"Mersenne-Twister Pseudo-random number generator in various languages",
+   "version":"0.1.0",
+   "input-size":{
+      "small":1000,
+      "medium":60000,
+      "large":100000
+   }
+}
