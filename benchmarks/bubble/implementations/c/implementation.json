@@ -1,0 +1,23 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "libraries":[
+       { "suite-root": "/implementations/c/common_rand.c"},
+       { "suite-root": "/implementations/c/common.c"}
+    ],
+    "include-directories":[
+       { "suite-root": "/implementations/c/" }
+    ],
+    "core-source-files":[
+       { "file": "./bubble.c"}
+    ],
+    "runner-source-file": { "file": "./runner.c" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size"}
+    ],
+    "runner-argument-types": [
+        "'DOUBLE&1*1&REAL'"
+    ]
+}

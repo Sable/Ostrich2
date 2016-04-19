@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"Jenkins 32-bit hash function from V8 Benchmark Suite",
+   "short-name":"prng-jenkins",
+   "description":"Jenkins 32-bit hash function from V8 Benchmark Suite",
+   "version":"0.1.0",
+   "input-size":{
+      "small":1000,
+      "medium":60000,
+      "large":100000
+   }
+}

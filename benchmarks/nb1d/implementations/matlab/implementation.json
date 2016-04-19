@@ -4,7 +4,8 @@
   "description": "Matlab implementation for babai",
   "language": "matlab",
   "core-source-files":[
-    { "file": "./babai.m" }
+    { "file": "./nbody1d.m" },
+    { "file": "./rand1.m" }
   ],
   "runner-source-file": { "file": "./runner.m" },
   "runner-arguments":[

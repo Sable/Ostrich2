@@ -1,9 +1,9 @@
 function runner(size)
-	R = triu(randn(size));
+	R = randn(size);
 	Y = randn(size, 1);
-	tic;
+	tic();
 	[vec] = babai(R, Y);
-	elapsedTime = toc;
+	elapsedTime = toc();
     disp('{');
     disp('"options": ');
     disp(size);
