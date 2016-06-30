@@ -147,7 +147,7 @@ app.ws('/socket', function (ws, req) {
   }
 
   // Generate code to run. First load dependencies, then execute the code
-  var code = 'require([' + modules.map(JSON.stringify).join(',') + '], function (args) {\n' +
+  var code = 'requirejs([' + modules.map(JSON.stringify).join(',') + '], function (args, benchmark) {\n' +
     parsed.expression + ';\n' +
     "try {\n" + 
     "  if (typeof runner === 'function' ) {\n" +
@@ -160,6 +160,20 @@ app.ws('/socket', function (ws, req) {
     '    run.apply(null, args)\n' +
     "    if (run.toString().indexOf('server.done') === -1) {\n" +
     '        server.done()\n' +
+    '    }\n' +
+    '  }\n' +
+    "  else if (typeof benchmark  === 'object' ) {\n" +
+    "    if (benchmark.hasOwnProperty('runner')) {\n" +
+    '      benchmark.runner.apply(null, args)\n' +
+    "      if (benchmark.runner.toString().indexOf('server.done') === -1) {\n" +
+    '          server.done()\n' +
+    '      }\n' +
+    '    }\n' +
+    "    else if (benchmark.hasOwnProperty('run')) {\n" +
+    '      benchmark.run.apply(null, args)\n' +
+    "      if (benchmark.run.toString().indexOf('server.done') === -1) {\n" +
+    '          server.done()\n' +
+    '      }\n' +
     '    }\n' +
     '  }\n' +
     '} catch (e) {\n' +
