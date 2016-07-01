@@ -250,8 +250,6 @@ function kernel_cpu(par, dim, box, rv, qv, fv) {
     }
 }
 
-var server = server || { done: function () {} }
 function run (boxes1d) {
     console.log(JSON.stringify(lavamd(boxes1d)))
-    server.done()
 }

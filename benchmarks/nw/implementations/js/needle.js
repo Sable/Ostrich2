@@ -28,8 +28,6 @@ if (typeof performance === "undefined") {
     performance = Date;
 }
 
-var server = server || { done: function () {} }
-
 // This hackery allows just replacing new Int32Array([...]) with new
 // Array([...]) and preserve the typed-array semantics.
 var ArrayOld = Array;
@@ -325,5 +323,4 @@ function run (dimensions, penalty, options)
     console.log(JSON.stringify({ status: 1,
              options: "run(" + [dimensions, penalty].join(",") + ")",
              time: (t2-t1)/1000 }));
-    server.done();
 }

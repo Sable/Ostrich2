@@ -38,5 +38,4 @@ function run (pageSize, numPages, numExecs) {
   console.log(JSON.stringify({ status: 1,
     options: 'run(' + [numPages, pageSize, numExecs].join(',') + ')',
   time: cumulativeTime / 1000 }))
-  server.done()
 }

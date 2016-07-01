@@ -20,5 +20,4 @@ function run (size) {
     time: (t2 - t1) / 1000,
     output: '[' + solutions + ', ' + us['solutions'] + ']'
   }))
-  server.done()
 }

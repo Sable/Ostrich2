@@ -170,8 +170,6 @@ function InitializeGraph(no_of_nodes) {
     }
 }
 
-var server = server || { done: function () {} }
 function run(nbNodes) {
     console.log(JSON.stringify(BFSGraph(nbNodes)))
-    server.done()
 }

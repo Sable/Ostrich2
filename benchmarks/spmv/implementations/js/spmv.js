@@ -260,7 +260,6 @@ function spmv_csr(matrix, dim, rowv, colv, v, y, out) {
     }
 }
 
-var server = server || { done: function () {} }
 function run (dim, density, stddev, iterations) {
     var m = generateRandomCSR(dim, density, stddev);
     var v = new Float32Array(dim);
@@ -276,5 +275,4 @@ function run (dim, density, stddev, iterations) {
     console.log(JSON.stringify({ status: 1,
              options: "run(" + [dim, density, stddev].join(",") + ")",
              time: (t2 - t1) / 1000 }))
-    server.done()
 }

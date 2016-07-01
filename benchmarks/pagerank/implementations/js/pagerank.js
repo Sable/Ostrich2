@@ -64,7 +64,6 @@ function reduce_page_rank(page_ranks, maps, n){
     return dif;
 }
 
-var server = server || { done: function () {} }
 function run (n, iter, thresh, divisor){
     var n = n !== undefined ? n : 1000;
     var iter = iter !== undefined ? iter : 1000;
@@ -138,5 +137,4 @@ function run (n, iter, thresh, divisor){
     console.log(JSON.stringify({ status: 1,
              options: "run(" + [n, iter, thresh, divisor].join(",") + ")",
              time: (t2-t1)/1000 }))
-    server.done()
 }

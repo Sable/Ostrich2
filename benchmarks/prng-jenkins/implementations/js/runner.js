@@ -26,7 +26,6 @@ if (typeof performance === "undefined") {
     performance = Date;
 }
 
-var server = server || { done: function () {} }
 function run (n){
     var x = 0;
     var y = 0;
@@ -42,5 +41,4 @@ function run (n){
         time: (t2 - t1) / 1000,
         output: String(y) 
     }));
-    server.done();
 }

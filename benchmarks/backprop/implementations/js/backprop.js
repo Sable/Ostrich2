@@ -225,8 +225,6 @@ function backprop_face(layer_size) {
     };
 }
 
-var server = server || { done: function () {} }
 function run (nb_input_elems) {
     console.log(JSON.stringify(backprop_face(nb_input_elems)))
-    server.done()
 }

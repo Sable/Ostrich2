@@ -667,8 +667,6 @@ function bwa_hmm(v_, n_, s_, t_)
              time: (t2-t1)/1000 };
 }
 
-var server = server || { done: function () {} }
 function run (v_, n_, s_, t_) {
     console.log(JSON.stringify(bwa_hmm(v_, n_, s_, t_)))
-    server.done()
 }

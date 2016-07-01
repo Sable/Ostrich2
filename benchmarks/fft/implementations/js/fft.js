@@ -142,7 +142,6 @@ function printComplexMatrix(m){
 }
 
 
-var server = server || { done: function () {} }
 function run (twoExp){
     if (twoExp === undefined) {
         twoExp = 10;
@@ -170,5 +169,4 @@ function run (twoExp){
     console.log(JSON.stringify({ status: 1,
              options: "run(" + twoExp + ")",
              time: (t2 - t1) / 1000 }));
-    server.done();
 }

@@ -171,7 +171,6 @@ function SRAD(niter,lambda) {
     }
 }
 
-var server = server || { done: function () {} }
 function run (niter,lambda) {
     var output = 0;
     image = new Float32Array(Ne);
@@ -199,5 +198,4 @@ function run (niter,lambda) {
     console.log(JSON.stringify({ status: 1,
              options: "run (" + [niter, lambda].join(",") + ")",
              time: (time1 - time0) / 1000 }))
-    server.done()
 }
