@@ -10,6 +10,12 @@
     ],
     "runner-name":"runner.js",
     "commands": [
+        {
+            "executable-name": "echo",
+            "options": [
+                "WARNING: none-js is deprecated, use ostrich-browserify-compiler instead. See https://github.com/Sable/ostrich-browserify-compiler."
+            ]
+        },
         {   "executable-name": "cat",
             "options": [
                 { "config": "/implementation/core-source-files"},
