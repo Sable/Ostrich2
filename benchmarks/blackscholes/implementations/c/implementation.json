@@ -1,0 +1,29 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"From PARSEC benchmarks",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./blackscholes.c" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nthreads"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/num-options"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/output-file"
+        }
+    ],
+    "libraries":[
+        {"file": "./optionData.txt"}
+    ],
+    "include-directories":[
+        { "suite-root": "/implementations/c/"}
+    ]
+}
