@@ -1,4 +1,3 @@
-
 function cap=capacitor(a, b, c, d, n, tol, rel)
 %-----------------------------------------------------------------------
 %
@@ -52,13 +51,13 @@ mask=ones(n+1, m+1)*rel;
 
 for ii=1:na+1,
     for jj=1:mb+1,
-	mask(ii, jj)=0;
-	f(ii, jj)=1;
+    	mask(ii, jj)=0;
+    	f(ii, jj)=1;
     end;
 end;
 
 oldcap=0;
-for iter=1:1000,
+for iter=1:1000, 
     f=seidel(f, mask, n, m, na, mb);
     cap=gauss(n, m, h, f);
     if (abs(cap-oldcap)./cap<tol)
@@ -69,3 +68,5 @@ for iter=1:1000,
 end;
 
 end
+
+
