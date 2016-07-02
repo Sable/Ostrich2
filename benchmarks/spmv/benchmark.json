@@ -6,22 +6,22 @@
     "version":"0.1.0",
     "input-size":{
         "small": {
-            "dimensions": 500,
+            "dimensions": 10000,
             "density": 100,
             "standard-deviation": 0.01,
             "iterations": 1
         },
         "medium": {
-            "dimensions": 50000,
-            "density": 2000,
+            "dimensions": 20000,
+            "density": 100,
             "standard-deviation": 0.01,
             "iterations": 100
         },
         "large": {
-            "dimensions": 140000,
-            "density": 2000,
+            "dimensions": 30000,
+            "density": 100,
             "standard-deviation": 0.01,
-            "iterations": 600
+            "iterations": 100
         }
     },
     "random-seed":1337,
