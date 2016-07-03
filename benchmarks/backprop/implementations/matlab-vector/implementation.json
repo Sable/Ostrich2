@@ -1,0 +1,19 @@
+{
+    "type": "implementation",
+    "short-name":"matlab-vector",
+    "description":"MATLAB vectorized implementation",
+    "language":"matlab",
+    "core-source-files":[
+        { "file": "./bp_core.m" }
+    ],  
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/matlab/setRandomSeed.m" },
+        { "suite-root": "/implementations/matlab/commonRandom.m" },
+        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
+        { "suite-root": "/implementations/matlab/createMatrixRandJS.m" }
+    ]
+}
