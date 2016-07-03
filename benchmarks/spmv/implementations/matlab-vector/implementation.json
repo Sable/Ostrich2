@@ -1,0 +1,29 @@
+{
+    "type": "implementation",
+    "short-name":"matlab-vector",
+    "description":"MATLAB vectorized implementation",
+    "language":"matlab",
+    "core-source-files":[
+        { "file": "./spmv_core_loop.m" }
+    ],  
+    "runner-source-file": { "file": "./runner_loop.m" },
+    "runner-arguments": [
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/dimensions"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/density"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/standard-deviation"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/iterations"
+        }
+    ],
+    "libraries":[]
+}
