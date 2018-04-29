@@ -1,0 +1,17 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"Reference C implementation ported from Rodinia suite",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./runner.c" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+    ],
+    "include-directories":[
+        { "suite-root": "/implementations/c/"}
+    ]
+}

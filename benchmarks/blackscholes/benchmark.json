@@ -1,0 +1,26 @@
+{
+    "type": "benchmark",
+    "name":"Black Scholes",
+    "short-name":"blackscholes",
+    "description": "Black Scholes",
+    "version":"0.1.0",
+    "input-size":{
+        "small": {
+            "nthreads": 1,
+            "num-options": 262144,
+            "output-file": "./dataOut/out_128K.txt"
+        },
+        "medium": {
+            "nthreads": 1,
+            "num-options": 524288,
+            "output-file": "./dataOut/out_512K.txt"
+        },
+        "large": {
+            "nthreads": 1,
+            "num-options": 1048576,
+            "output-file": "./dataOut/out_1024K.txt"
+        }
+    },
+    "random-seed":1337,
+    "dwarf": "none"
+}

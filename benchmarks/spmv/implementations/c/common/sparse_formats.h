@@ -76,7 +76,8 @@ int unsigned_int_comparator(const void* v1, const void* v2);
  * 					HB >= LB
  * Returns: random int within [LB,HB] otherwise.
  */
-unsigned long gen_rand(const long LB, const long HB);
+//unsigned long gen_rand(const long LB, const long HB);
+ int gen_rand(const int LB, const int HB);
 
 /*
  * Method to generate random matrix of given size and density in compressed sparse row (CSR) form.

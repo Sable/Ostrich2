@@ -4,19 +4,27 @@
     "description":"Matlab port of C implementation",
     "language":"matlab",
     "core-source-files":[
-       { "file": "./createRandomPageMatrices.m"},
        { "file": "./pagerank.m"}
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
-        { "expand": "/experiment/input-size" },
-        { "file": "./pagerank.data"}
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nb-pages"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nb-iterations"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/threshold"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/divisor"
+        }
     ],
     "libraries":[
-        { "suite-root": "/implementations/matlab/createMatrixFromRandom.m" },
-        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
-        { "suite-root": "/implementations/matlab/commonRandom.m" },
-        { "suite-root": "/implementations/matlab/setRand.m" },
-        { "suite-root": "/implementations/matlab/setRandomSeed.m" }
     ]
 }

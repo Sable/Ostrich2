@@ -16,7 +16,15 @@
     ],
     "runner-source-file": { "file": "./runner.m" },
     "runner-arguments": [
-        { "expand": "/experiment/input-size" }
+         {
+            "expand": "/experiment/input-size",
+            "path": "/model"
+         },
+         {
+            "expand": "/experiment/input-size",
+            "path": "/nb-states"
+         }
+
     ],
     "libraries":[]
 }

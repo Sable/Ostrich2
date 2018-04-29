@@ -4,7 +4,7 @@
   "description": "Matlab implementation for babai",
   "language": "matlab",
   "core-source-files":[
-    { "file": "./capacitator.m" },
+    { "file": "./capacitor.m" },
     { "file": "./gauss.m" },
     { "file": "./linspace.m" },
     { "file": "./seidel.m" }

@@ -1,0 +1,27 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./inputData.m"},
+       { "file": "./runBlkSchls_new.m"}
+    ],  
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nthreads"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/num-options"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/output-file"
+        }
+    ],  
+    "libraries":[
+    ]
+}

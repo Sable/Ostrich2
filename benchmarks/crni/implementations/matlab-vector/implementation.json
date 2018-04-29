@@ -1,0 +1,15 @@
+{
+    "type": "implementation",
+    "short-name":"matlab-vector",
+    "description":"MATLAB vectorized implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./crnich.m"}
+    ],  
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+    ]
+}

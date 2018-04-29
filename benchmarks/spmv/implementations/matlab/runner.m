@@ -24,9 +24,9 @@ if update_interval == 0
 end
 
 for i = 1:csr_num_rows
-    if mod(i, update_interval) == 0
-        disp(sprintf('\t%d of %d (%5.1f%%) Rows Generated. Continuing...\n',i,csr_num_rows,i/csr_num_rows*100));
-    end
+    %if mod(i, update_interval) == 0
+    %    disp(sprintf('\t%d of %d (%5.1f%%) Rows Generated. Continuing...\n',i,csr_num_rows,i/csr_num_rows*100));
+    %end
     nnz_ith_row_double  = randn() * csr_stddev + csr_nz_per_row;
     if nnz_ith_row_double < 0
         nnz_ith_row = 0;

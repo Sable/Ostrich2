@@ -13,7 +13,8 @@ int unsigned_int_comparator(const void* v1, const void* v2) {
         return 0;
 }
 
-unsigned long gen_rand(const long LB, const long HB) {
+//unsigned long gen_rand(const long LB, const long HB) {
+int gen_rand(const int LB, const int HB) {
     int range = HB - LB + 1;
     check((HB >= 0 && LB >= 0 && range > 0),"sparse_formats.gen_rand() - Invalid Bound(s). Exiting...");
     return (common_rand() % range) + LB;
@@ -79,7 +80,7 @@ csr_matrix rand_csr(const unsigned int N,const unsigned int density, const doubl
 
         for(j=0; j<nnz_ith_row; j++)
         {
-            rand_col = abs(gen_rand(0,csr.num_cols - 1));
+            rand_col = abs(gen_rand(0,csr.num_cols - 1)); //unsigned long is always non-negative
             if(used_cols[rand_col]) {
                 j--;
             }
